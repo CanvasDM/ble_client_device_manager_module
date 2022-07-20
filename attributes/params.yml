@@ -1,0 +1,35 @@
+---
+info:
+  title: ble_client_dm_attributes
+attributes:
+  - name: bluetooth_address
+    required: true
+    schema:
+      minLength: 12
+      maxLength: 12
+      type: string
+    x-ctype: string
+    x-broadcast: false
+    x-default: "0"
+    x-example: "010203040506"
+    x-lockable: false
+    x-prepare: false
+    x-readable: true
+    x-savable: false
+    x-writable: false
+    summary: Bluetooth address
+  - name: dm_cnx_delay
+    required: true
+    schema:
+      type: integer
+      minimum: 0
+      maximum: 600
+    x-ctype: uint16_t
+    x-broadcast: true
+    x-default: 0
+    x-lockable: true
+    x-prepare: false
+    x-readable: true
+    x-savable: true
+    x-writable: true
+    summary: "Delay (in seconds) before connecting to DM server"
