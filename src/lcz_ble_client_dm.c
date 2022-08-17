@@ -88,7 +88,7 @@ static void dm_start_work_handler(struct k_work *work)
 	ep_name = CONFIG_LCZ_LWM2M_CLIENT_ENDPOINT_NAME;
 #endif
 	ret = lcz_lwm2m_client_connect(CONFIG_LCZ_BLE_CLIENT_DM_CLIENT_INDEX, -1, -1, ep_name,
-				       LCZ_LWM2M_CLIENT_TRANSPORT_BLE);
+				       LCZ_LWM2M_CLIENT_TRANSPORT_BLE, -1);
 	if (ret < 0) {
 		LOG_ERR("Failed to start LwM2M client: %d", ret);
 	}
