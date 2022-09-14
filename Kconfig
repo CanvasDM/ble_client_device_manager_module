@@ -67,4 +67,13 @@ config LCZ_BLE_CLIENT_DM_ADVERTISE
 	help
 		When enabled, the client device manager will start BLE advertisements
 
+if FSU_ENCRYPTED_FILES
+config LCZ_CLIENT_DM_FILE_RULES_INIT_PRIORITY
+	int "File rules callback init priority"
+	range 0 99
+	default APPLICATION_INIT_PRIORITY
+	help
+	  Application init priority for file management rule callback registration
+endif # FSU_ENCRYPTED_FILES
+
 endif # LCZ_BLE_CLIENT_DM

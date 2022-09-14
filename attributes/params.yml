@@ -27,9 +27,49 @@ attributes:
     x-ctype: uint16_t
     x-broadcast: true
     x-default: 0
-    x-lockable: true
     x-prepare: false
     x-readable: true
     x-savable: true
     x-writable: true
     summary: "Delay (in seconds) before connecting to DM server"
+  - name: factory_load_path
+    required: true
+    schema:
+      maxLength: 32
+      minLength: 1
+      type: string
+    x-ctype: string
+    x-broadcast: false
+    x-default: /lfs1/enc/factory_load.txt
+    x-prepare: false
+    x-readable: true
+    x-savable: true
+    x-writable: true
+    summary: "Path for factory settings that can be restored with attribute load"
+  - name: device_id
+    required: true
+    schema:
+      maxLength: 64
+      minLength: 0
+      type: string
+    x-ctype: string
+    x-broadcast: true
+    x-default: ""
+    x-prepare: false
+    x-readable: true
+    x-savable: true
+    x-writable: true
+    summary: "Unique identifier for the device. When firmware boots, if the value is blank (the default value), the firmware will set a unique value for the device using BLE MAC address, IMEI, or some similar value."
+  - name: ble_rssi
+    summary: "Received Signal Strength Indication"
+    required: true
+    schema:
+      type: integer
+    x-ctype: int16_t
+    x-broadcast: true
+    x-default: -128
+    x-lockable: false
+    x-prepare: false
+    x-readable: true
+    x-savable: false
+    x-writable: false
