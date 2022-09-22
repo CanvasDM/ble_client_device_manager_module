@@ -73,3 +73,31 @@ attributes:
     x-readable: true
     x-savable: false
     x-writable: false
+  - name: smp_auth_req
+    required: true
+    schema:
+      maximum: 1
+      minimum: 0
+      type: integer
+    x-ctype: bool
+    x-broadcast: true
+    x-default: 0
+    x-prepare: false
+    x-readable: true
+    x-savable: true
+    x-writable: true
+    summary: "If true, SMP authentication will be required before accessing any SMP services. If false, all SMP services are available regardless of authentication status."
+  - name: smp_auth_timeout
+    required: true
+    schema:
+      maximum: 86400
+      minimum: 0
+      type: integer
+    x-ctype: uint32_t
+    x-broadcast: true
+    x-default: 300
+    x-prepare: false
+    x-readable: true
+    x-savable: true
+    x-writable: true
+    summary: "SMP authentication will time out after a lapse in SMP commands lasting this number of seconds."
