@@ -302,7 +302,7 @@ static int lcz_ble_client_dm_file_rules_init(const struct device *device)
 	lcz_lwm2m_obj_fs_mgmt_reg_exec_cb(client_dm_file_exec);
 #endif
 #if defined(CONFIG_LCZ_LWM2M_FW_UPDATE_SHELL)
-	lcz_lwm2m_fw_update_shell_reg_perm_cb(gw_dm_file_test);
+	lcz_lwm2m_fw_update_shell_reg_perm_cb(client_dm_file_test);
 #endif
 	return 0;
 }
