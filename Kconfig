@@ -24,6 +24,14 @@ config LCZ_BLE_CLIENT_DM_BLE_ADDR_INIT_PRIORITY
 	range 0 99
 	default APPLICATION_INIT_PRIORITY
 
+config LCZ_BLE_CLIENT_DM_DEVICE_ID_INIT_PRIORITY
+	int "Device Id init priority"
+	depends on ATTR
+	range 0 99
+	default APPLICATION_INIT_PRIORITY
+	help
+	  Application init priority for device ID
+
 config LCZ_BLE_CLIENT_DM_CLIENT_INDEX
 	int "Client index for DM LwM2M connection"
 	default 0
