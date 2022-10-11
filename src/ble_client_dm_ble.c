@@ -25,8 +25,7 @@ LOG_MODULE_REGISTER(ble_client_dm_ble, CONFIG_LCZ_BLE_CLIENT_DM_LOG_LEVEL);
 /* Local Constant, Macro and Type Definitions                                                     */
 /**************************************************************************************************/
 /* Bit in the flags word to signal when LwM2M data is ready */
-#define LWM2M_DATA_READY_FLAG (1 << 11)
-#warning "bug #22088: use correct advertising flag for LwM2M"
+#define LWM2M_DATA_READY_FLAG BIT(0)
 
 /* Delay before updating advertising data */
 #define ADV_UPDATE_DELAY K_MSEC(100)
