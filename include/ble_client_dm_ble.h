@@ -15,6 +15,13 @@ extern "C" {
 #endif
 
 /**************************************************************************************************/
+/* Global Constants, Macros and Type Definitions                                                  */
+/**************************************************************************************************/
+#if defined(CONFIG_LCZ_BLE_CLIENT_DM_MEMFAULT)
+typedef void (*ble_client_dm_ble_memfault_data_ready_cb_t)(bool data_ready);
+#endif
+
+/**************************************************************************************************/
 /* Global Function Prototypes                                                                     */
 /**************************************************************************************************/
 #if defined(CONFIG_LCZ_BLE_CLIENT_DM_ADVERTISE)
@@ -28,6 +35,14 @@ extern "C" {
  * @return 0 on success, <0 on error
  */
 int ble_client_dm_device_ble_advertise(void);
+#endif
+
+#if defined(CONFIG_LCZ_BLE_CLIENT_DM_MEMFAULT)
+/**
+ * @brief Registers the callback invoked when memfault data is available
+ *
+ */
+void ble_client_dm_register_memfault_data_ready_cb(ble_client_dm_ble_memfault_data_ready_cb_t cb);
 #endif
 
 #ifdef __cplusplus

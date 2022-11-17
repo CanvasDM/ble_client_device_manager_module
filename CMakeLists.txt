@@ -13,5 +13,6 @@ zephyr_sources(
 zephyr_sources_ifdef(CONFIG_FSU_ENCRYPTED_FILES src/lcz_ble_client_dm_file_rules.c)
 zephyr_sources_ifdef(CONFIG_MCUMGR src/lcz_ble_client_dm_smp_rules.c)
 zephyr_sources_ifdef(CONFIG_ATTR src/ble_client_dm_device_id_init.c)
+zephyr_sources_ifdef(CONFIG_LCZ_BLE_CLIENT_DM_MEMFAULT src/memfault_task.c)
 
 endif()
